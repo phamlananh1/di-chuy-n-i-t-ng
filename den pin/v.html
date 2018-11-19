@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var Bin = function () {
+     this.setNangluong = function (nangluong) {
+         this.nangluong = nangluong;
+     };
+     this.getNangluong = function () {
+         return this.nangluong;
+     };
+     this.giamNangLuong = function () {
+         if (this.nangluong > 0) {
+             this.nangluong--;
+         }
+     }
+    };
+    var Den = function () {
+        this.setBin = function (bin) {
+            this.bin = bin;
+        };
+        this.getbinInfo = function () {
+            return this.bin.getNangluong();
+        };
+        this.anhsang = function () {
+            if (this.trangthai) {
+                alert("Sang");
+            } else {
+                alert("Khong Sang");
+            }
+        };
+        this.bat = function () {
+            this.trangthai = true;
+        };
+        this.tat = function () {
+            this.trangthai = false;
+        }
+    };
+    var bin = new Bin();
+    bin.setNangluong(10);
+    var den = new Den();
+    den.setBin(bin);
+    document.write("Thong tin bin:" + den.getbinInfo() + "<br/>");
+    den.anhsang();
+
+    document.write("Turn on<br/>")
+    den.bat();
+    den.anhsang();
+    document.write("thong tin bin:" + den.getbinInfo() + "<br/>");
+
+    document.write("Turn off<br/>")
+    den.tat();
+    den.anhsang();
+</script>
+</body>
+</html>
